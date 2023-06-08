@@ -1,0 +1,1 @@
+from .generator_m2m import *
