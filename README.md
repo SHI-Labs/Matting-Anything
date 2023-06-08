@@ -4,7 +4,8 @@
 [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 [Jiachen Li](https://chrisjuniorli.github.io/),
-[Jitesh Jain](https://praeclarumjj3.github.io/),[Humphrey Shi](https://www.humphreyshi.com/home)
+[Jitesh Jain](https://praeclarumjj3.github.io/),
+[Humphrey Shi](https://www.humphreyshi.com/home)
 
 [[`Project page`](https://chrisjuniorli.github.io/project/Matting-Anything/)]
 [[`ArXiv`](place_holder)]
