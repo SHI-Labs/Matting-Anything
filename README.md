@@ -6,7 +6,11 @@
 [Jiachen Li](https://chrisjuniorli.github.io/),
 [Jitesh Jain](https://praeclarumjj3.github.io/),[Humphrey Shi](https://www.humphreyshi.com/home)
 
-[[`Project Page`](https://chrisjuniorli.github.io/project/Matting-Anything/)] [[`arXiv`](place_holder)] [[`pdf`](place_holder)]
+[[`Project page`](https://chrisjuniorli.github.io/project/Matting-Anything/)]
+[[`ArXiv`](place_holder)]
+[[`Pdf`](place_holder)]
+[[`Video`](https://www.youtube.com/watch?v=XY2Q0HATGOk)]
+[[`Demo`](place_holder)]
 
 ![](./assets/teaser_arxiv_v2.png)
 
@@ -36,6 +40,10 @@ iterative refinement process, detailed in Section 3, progressively improves the 
 information from the multi-scale outputs.
 
 ### Visualization
+
+<div align="center">
+  <img src="assets/teaser.gif" width="100%" height="100%"/>
+</div>
 
 <div align="center">
   <img src="assets/vis.png" width="100%" height="100%"/>
