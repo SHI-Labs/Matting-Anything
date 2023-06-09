@@ -214,10 +214,10 @@ if __name__ == "__main__":
     with block:
         gr.Markdown(
         """
-        # MAM Demo
-        Welcome to the MAM demo and upload your image to get started <br/> You may select different prompt types to get the alpha matte of target instance, and select different backgrounds for image composition.
+        # Matting Anything Demo
+        Welcome to the Matting Anything demo and upload your image to get started <br/> You may select different prompt types to get the alpha matte of target instance, and select different backgrounds for image composition.
         ## Usage
-        You may check the <a href='https://www.youtube.com/watch?v=U0Bbst3LzIE'>video</a> to see how to play with the demo, or check the details below.
+        You may check the <a href='https://www.youtube.com/watch?v=XY2Q0HATGOk'>video</a> to see how to play with the demo, or check the details below.
         <details>
         You may upload an image to start, we support 3 prompt types to get the alpha matte of the target instance：
 
