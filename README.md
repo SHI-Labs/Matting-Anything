@@ -66,10 +66,10 @@ Please refer to [Getting Started](GETTING_STARTED.md) for dataset preparation, t
 ## Citation
 
 ```bibtex
-@article{li2023mam,
-      title={{Matting Anything}},
+@article{li2023matting,
+      title={Matting Anything},
       author={Jiachen Li and Jitesh Jain and Humphrey Shi},
-      journal={arXiv}, 
+      journal={arXiv: 2306.05399}, 
       year={2023}
     }
 ```
