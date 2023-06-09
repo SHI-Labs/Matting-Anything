@@ -63,6 +63,9 @@ Please refer to [Installation Instructions](INSTALL.md) for complete installatio
 
 Please refer to [Getting Started](GETTING_STARTED.md) for dataset preparation, training and inference details of MAM.
 
+## Third-Party Projects
+* [Matting-Anything-Colab](https://github.com/camenduru/Matting-Anything-colab) ([@camenduru](https://twitter.com/camenduru))
+
 ## Citation
 
 ```bibtex
