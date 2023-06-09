@@ -8,15 +8,15 @@
 [Humphrey Shi](https://www.humphreyshi.com/home)
 
 [[`Project page`](https://chrisjuniorli.github.io/project/Matting-Anything/)]
-[[`ArXiv`](place_holder)]
-[[`Pdf`](place_holder)]
+[[`ArXiv`](https://arxiv.org/abs/2306.05399)]
+[[`Pdf`](https://arxiv.org/pdf/2306.05399.pdf)]
 [[`Video`](https://www.youtube.com/watch?v=XY2Q0HATGOk)]
 [[`Demo`](place_holder)]
 
 ![](./assets/teaser_arxiv_v2.png)
 
 ## Updates
-- **`2023/06/07`**: [**Arxiv Preprint**]() and [**Huggingface Demo**]() are released.
+- **`2023/06/08`**: [**Arxiv Preprint**](https://arxiv.org/abs/2306.05399) is released.
 - **`2023/06/06`**: [**Project Page**](https://chrisjuniorli.github.io/project/Matting-Anything) and [**Demo Video**](https://www.youtube.com/watch?v=XY2Q0HATGOk) are released.
 
 ## Contents
