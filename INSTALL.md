@@ -59,4 +59,4 @@ We support 2 background types to support image composition with the alpha matte 
 1. **real_world_sample**: Randomly select a real-world image from `assets/backgrounds` for composition.
 2. **generated_by_text**: Send background text prompt to create a background image with stable diffusion model in the `Background Prompt` box.
 
-You can alsp play with the demo online at HuggingFace.
+You can alsp play with the demo online at [HuggingFace](https://huggingface.co/spaces/shi-labs/Matting-Anything).
