@@ -1,5 +1,6 @@
 # Matting Anything
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=XY2Q0HATGOk) [![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)]()
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=XY2Q0HATGOk) 
+[![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/Matting-Anything)
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
@@ -11,11 +12,12 @@
 [[`ArXiv`](https://arxiv.org/abs/2306.05399)]
 [[`Pdf`](https://arxiv.org/pdf/2306.05399.pdf)]
 [[`Video`](https://www.youtube.com/watch?v=XY2Q0HATGOk)]
-[[`Demo`](place_holder)]
+[[`Demo`](https://huggingface.co/spaces/shi-labs/Matting-Anything)]
 
 ![](./assets/teaser_arxiv_v2.png)
 
 ## Updates
+- **`2023/06/09`**: [**HuggingFace Demo**](https://huggingface.co/spaces/shi-labs/Matting-Anything) is released.
 - **`2023/06/08`**: [**Arxiv Preprint**](https://arxiv.org/abs/2306.05399) is released.
 - **`2023/06/06`**: [**Project Page**](https://chrisjuniorli.github.io/project/Matting-Anything) and [**Demo Video**](https://www.youtube.com/watch?v=XY2Q0HATGOk) are released.
 
