@@ -67,6 +67,7 @@ Please refer to [Getting Started](GETTING_STARTED.md) for dataset preparation, t
 
 ## Third-Party Projects
 * [Matting-Anything-Colab](https://github.com/camenduru/Matting-Anything-colab) ([@camenduru](https://twitter.com/camenduru))
+* [Matting-Anything-Video](https://huggingface.co/spaces/fffiloni/Video-Matting-Anything) ([@fffiloni](https://twitter.com/fffiloni))
 
 ## Citation
 
