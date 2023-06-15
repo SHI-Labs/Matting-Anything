@@ -1,5 +1,7 @@
 # Installation Instructions
 ## MAM Setup
+We use Python 3.9, PyTorch 1.13.1 (CUDA 11.7 build), torchvision 0.14.1, diffusers 0.17.0 for local setup. You may specify the version in the requirements.txt to align with our local setup if you meet any version mismatch issues during the installation process.
+
 ### Create a conda environment
   
   ```bash
