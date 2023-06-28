@@ -19,8 +19,8 @@ CONFIG.model = EasyDict({})
 # use pretrained checkpoint as encoder
 CONFIG.model.freeze_seg = True
 CONFIG.model.multi_scale = False
-CONFIG.model.imagenet_pretrain = True
-CONFIG.model.imagenet_pretrain_path = "/home/liyaoyi/Source/python/attentionMatting/pretrain/model_best_resnet34_En_nomixup.pth"
+CONFIG.model.imagenet_pretrain = False
+CONFIG.model.imagenet_pretrain_path = "path/to/model_best_resnet34_En_nomixup.pth"
 CONFIG.model.batch_size = 16
 # one-hot or class, choice: [3, 1]
 CONFIG.model.mask_channel = 1
@@ -36,8 +36,8 @@ CONFIG.model.arch = EasyDict({})
 # definition in networks/encoders/__init__.py and networks/encoders/__init__.py
 CONFIG.model.arch.encoder = "res_shortcut_encoder_29"
 CONFIG.model.arch.decoder = "res_shortcut_decoder_22"
-CONFIG.model.arch.m2m = "conv_baseline"
-CONFIG.model.arch.seg = "maskrcnn"
+CONFIG.model.arch.m2m = "sam_decoder_deep"
+CONFIG.model.arch.seg = "sam"
 # predefined for GAN structure
 CONFIG.model.arch.discriminator = None
 
@@ -54,8 +54,6 @@ CONFIG.data.train_bg = None
 CONFIG.data.test_merged = None
 CONFIG.data.test_alpha = None
 CONFIG.data.test_trimap = None
-CONFIG.data.imagematte_fg = None
-CONFIG.data.imagematte_pha = None
 CONFIG.data.d646_fg = None
 CONFIG.data.d646_pha = None
 CONFIG.data.aim_fg = None
@@ -64,12 +62,10 @@ CONFIG.data.human2k_fg = None
 CONFIG.data.human2k_pha = None
 CONFIG.data.am2k_fg = None
 CONFIG.data.am2k_pha = None
-CONFIG.data.coco_bg = None
-CONFIG.data.bg20k_bg = None
 CONFIG.data.rim_pha = None
 CONFIG.data.rim_img = None
-CONFIG.data.spd_pha = None
-CONFIG.data.spd_img = None
+CONFIG.data.coco_bg = None
+CONFIG.data.bg20k_bg = None
 # feed forward image size (untested)
 CONFIG.data.crop_size = 1024
 # composition of two foregrounds, affine transform, crop and HSV jitter
@@ -79,21 +75,22 @@ CONFIG.data.random_interp = True
 
 ### Benchmark config
 CONFIG.benchmark = EasyDict({})
-CONFIG.benchmark.him2k_img = '/home/jiachen.li/data/HIM2K/images/natural'
-CONFIG.benchmark.him2k_alpha = '/home/jiachen.li/data/HIM2K/alphas/natural'
-CONFIG.benchmark.him2k_comp_img = '/home/jiachen.li/data/HIM2K/images/comp'
-CONFIG.benchmark.him2k_comp_alpha = '/home/jiachen.li/data/HIM2K/alphas/comp'
-CONFIG.benchmark.rwp636_img = '/home/jiachen.li/data/RealWorldPortrait-636/image'
-CONFIG.benchmark.rwp636_alpha = '/home/jiachen.li/data/RealWorldPortrait-636/alpha'
-CONFIG.benchmark.ppm100_img = '/home/jiachen.li/data/PPM-100/image'
-CONFIG.benchmark.ppm100_alpha = '/home/jiachen.li/data/PPM-100/matte'
-CONFIG.benchmark.am2k_img = '/home/jiachen.li/data/AM2k/validation/original'
-CONFIG.benchmark.am2k_alpha = '/home/jiachen.li/data/AM2k/validation/mask'
-CONFIG.benchmark.rw100_img = '/home/jiachen.li/data/RefMatte_RW_100/image_all'
-CONFIG.benchmark.rw100_alpha = '/home/jiachen.li/data/RefMatte_RW_100/mask'
-CONFIG.benchmark.rw100_text = '/home/jiachen.li/data/RefMatte_RW_100/refmatte_rw100_label.json'
-CONFIG.benchmark.rw100_index = '/home/jiachen.li/data/RefMatte_RW_100/eval_index_expression.json'
-CONFIG.benchmark.vm_img = '/home/jiachen.li/data/videomatte_512x288'
+CONFIG.benchmark.him2k_img = 'path/to/HIM2K/images/natural'
+CONFIG.benchmark.him2k_alpha = 'path/to/HIM2K/alphas/natural'
+CONFIG.benchmark.him2k_comp_img = 'path/to/HIM2K/images/comp'
+CONFIG.benchmark.him2k_comp_alpha = 'path/to/HIM2K/alphas/comp'
+CONFIG.benchmark.rwp636_img = 'path/to/RealWorldPortrait-636/image'
+CONFIG.benchmark.rwp636_alpha = 'path/to/RealWorldPortrait-636/alpha'
+CONFIG.benchmark.ppm100_img = 'path/to/PPM-100/image'
+CONFIG.benchmark.ppm100_alpha = 'path/to/PPM-100/matte'
+CONFIG.benchmark.pm10k_img = 'path/to/P3M-10k/validation/P3M-500-NP/original_image'
+CONFIG.benchmark.pm10k_alpha = 'path/to/P3M-10k/validation/P3M-500-NP/mask'
+CONFIG.benchmark.am2k_img = 'path/to/AM2k/validation/original'
+CONFIG.benchmark.am2k_alpha = 'path/to/AM2k/validation/mask'
+CONFIG.benchmark.rw100_img = 'path/to/RefMatte_RW_100/image_all'
+CONFIG.benchmark.rw100_alpha = 'path/to/RefMatte_RW_100/mask'
+CONFIG.benchmark.rw100_text = 'path/to/RefMatte_RW_100/refmatte_rw100_label.json'
+CONFIG.benchmark.rw100_index = 'path/to/RefMatte_RW_100/eval_index_expression.json'
 
 # Training config
 CONFIG.train = EasyDict({})
@@ -107,7 +104,7 @@ CONFIG.train.beta1 = 0.5
 CONFIG.train.beta2 = 0.999
 # weight of different losses
 CONFIG.train.rec_weight = 1
-CONFIG.train.comp_weight = 1
+CONFIG.train.comp_weight = 0
 CONFIG.train.lap_weight = 1
 # clip large gradient
 CONFIG.train.clip_grad = True

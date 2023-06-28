@@ -18,7 +18,7 @@ import utils
 
 # Grounding DINO
 import sys
-sys.path.insert(0, './Grounded-Segment-Anything')
+sys.path.insert(0, './GroundingDINO')
 from groundingdino.util.inference import Model
 
 # SAM

@@ -7,7 +7,6 @@ from utils.config import CONFIG
 import torch.distributed as dist
 import torch.nn.functional as F
 from skimage.measure import label
-import pdb
 
 def make_dir(target_dir):
     """
@@ -118,48 +117,6 @@ def load_imagenet_pretrain(model, checkpoint_file):
 
     model.module.encoder.load_state_dict(state_dict, strict=False)
 
-def load_imagenet_pretrain_nomask(model, checkpoint_file):
-    """
-    Load imagenet pretrained resnet
-    Add zeros channel to the first convolution layer
-    Since we have the spectral normalization, we need to do a little more
-    """
-    checkpoint = torch.load(checkpoint_file, map_location = lambda storage, loc: storage.cuda(CONFIG.gpu))
-    state_dict = remove_prefix_state_dict(checkpoint['state_dict'])
-    for key, value in state_dict.items():
-        state_dict[key] = state_dict[key].float()
-
-    logger = logging.getLogger("Logger")
-    logger.debug("Imagenet pretrained keys:")
-    logger.debug(state_dict.keys())
-    logger.debug("Generator keys:")
-    logger.debug(model.module.encoder.state_dict().keys())
-    logger.debug("Intersection  keys:")
-    logger.debug(set(model.module.encoder.state_dict().keys())&set(state_dict.keys()))
-
-    #weight_u = state_dict["conv1.module.weight_u"]
-    #weight_v = state_dict["conv1.module.weight_v"]
-    #weight_bar = state_dict["conv1.module.weight_bar"]
-
-    #logger.debug("weight_v: {}".format(weight_v))
-    #logger.debug("weight_bar: {}".format(weight_bar.view(32, -1)))
-    #logger.debug("sigma: {}".format(weight_u.dot(weight_bar.view(32, -1).mv(weight_v))))
-
-    #new_weight_v = torch.zeros((3+CONFIG.model.mask_channel), 3, 3).cuda()
-    #new_weight_bar = torch.zeros(32, (3+CONFIG.model.mask_channel), 3, 3).cuda()
-
-    #new_weight_v[:3, :, :].copy_(weight_v.view(3, 3, 3))
-    #new_weight_bar[:, :3, :, :].copy_(weight_bar)
-
-    #logger.debug("new weight_v: {}".format(new_weight_v.view(-1)))
-    #logger.debug("new weight_bar: {}".format(new_weight_bar.view(32, -1)))
-    #logger.debug("new sigma: {}".format(weight_u.dot(new_weight_bar.view(32, -1).mv(new_weight_v.view(-1)))))
-
-    #state_dict["conv1.module.weight_v"] = new_weight_v.view(-1)
-    #state_dict["conv1.module.weight_bar"] = new_weight_bar
-
-    model.module.encoder.load_state_dict(state_dict, strict=False)
-
 def load_VGG_pretrain(model, checkpoint_file):
     """
     Load imagenet pretrained resnet
@@ -205,7 +162,6 @@ def get_gradfilter():
     grad_filter = np.array(grad_filter)
     grad_filter = np.expand_dims(grad_filter, axis=1)
     return grad_filter.astype(np.float32)
-
 
 def reduce_tensor_dict(tensor_dict, mode='mean'):
     """
