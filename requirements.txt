@@ -20,4 +20,4 @@ scikit-image
 opencv-python
 pycocotools
 matplotlib
-
+chardet
