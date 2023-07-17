@@ -17,6 +17,7 @@
 ![](./assets/teaser_arxiv_v2.png)
 
 ## Updates
+- **`2023/06/28`**: [**Getting Started**](https://github.com/SHI-Labs/Matting-Anything/blob/main/GETTING_STARTED.md) is updated with training and evaluation instructions.
 - **`2023/06/09`**: [**HuggingFace Demo**](https://huggingface.co/spaces/shi-labs/Matting-Anything) is released.
 - **`2023/06/08`**: [**Arxiv Preprint**](https://arxiv.org/abs/2306.05399) is released.
 - **`2023/06/06`**: [**Project Page**](https://chrisjuniorli.github.io/project/Matting-Anything) and [**Demo Video**](https://www.youtube.com/watch?v=XY2Q0HATGOk) are released.
