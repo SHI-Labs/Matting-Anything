@@ -17,6 +17,7 @@
 ![](./assets/teaser_arxiv_v2.png)
 
 ## Updates
+- **`2023/07/17`**: Added MAM checkpoints based on SAM ViT-L and SAM ViT-H.
 - **`2023/06/28`**: [**Getting Started**](https://github.com/SHI-Labs/Matting-Anything/blob/main/GETTING_STARTED.md) is updated with training and evaluation instructions.
 - **`2023/06/09`**: [**HuggingFace Demo**](https://huggingface.co/spaces/shi-labs/Matting-Anything) is released.
 - **`2023/06/08`**: [**Arxiv Preprint**](https://arxiv.org/abs/2306.05399) is released.
@@ -25,7 +26,8 @@
 ## Contents
 - [Matting-Anything](#matting-anything)
 - [Installation](#installation)
-
+- [Getting Started](#getting-started)
+- [Third-Party Projects](#third-party-projects)
 
 ## Matting Anything
 ### Abstract
@@ -60,11 +62,11 @@ MAM effectively addresses some of the holes present in the mask predictions gene
 
 ## Installation
 
-Please refer to [Installation Instructions](INSTALL.md) for complete installation instructions of MAM.
+Please refer to [Installation Instructions](INSTALL.md) for complete installation instructions for MAM.
 
 ## Getting Started
 
-Please refer to [Getting Started](GETTING_STARTED.md) for dataset preparation, training and inference details of MAM.
+Please refer to [Getting Started](GETTING_STARTED.md) for dataset preparation, training, and inference details of MAM.
 
 ## Third-Party Projects
 * [Matting-Anything-Colab](https://github.com/camenduru/Matting-Anything-colab) ([@camenduru](https://twitter.com/camenduru))
