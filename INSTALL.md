@@ -40,8 +40,8 @@ More details can be found in [segment anything](https://github.com/facebookresea
   # Download GroundingDINO model
   wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
 
-  # Download MAM model
-  https://drive.google.com/file/d/1GNjlD5A7gN3UZTtzqev5W21w4y21nO8f/view?usp=sharing
+  # Download MAM models
+  https://drive.google.com/drive/folders/1Bor2jRE0U-U6PIYaCm6SZY7qu_c1GYfq?usp=sharing
   ```
 
 ## Gradio Setup
