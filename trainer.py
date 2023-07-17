@@ -295,14 +295,12 @@ class Trainer(object):
             if (step % self.log_config.checkpoint_step == 0 or step == self.train_config.total_step) \
                     and CONFIG.local_rank == 0 and (step > start):
                 self.logger.info('Saving the trained models from step {}...'.format(iter))
-                #self.save_model("latest_model", step, loss)
                 self.save_model("model_step_{}".format(step), step, loss)
             
             torch.cuda.empty_cache()
 
 
     def save_model(self, checkpoint_name, iter, loss):
-        """Restore the trained generator and discriminator."""
         torch.save({
             'iter': iter,
             'loss': loss,
@@ -310,7 +308,6 @@ class Trainer(object):
             'opt_state_dict': self.G_optimizer.state_dict(),
             'lr_state_dict': self.G_scheduler.state_dict()
         }, os.path.join(self.log_config.checkpoint_path, '{}.pth'.format(checkpoint_name)))
-
 
     @staticmethod
     def regression_loss(logit, target, loss_type='l1', weight=None):

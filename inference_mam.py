@@ -194,7 +194,7 @@ if __name__ == '__main__':
 
     # load checkpoint
     checkpoint = torch.load(args.checkpoint)
-    model.load_state_dict(utils.remove_prefix_state_dict(checkpoint['state_dict']), strict=True)
+    model.m2m.load_state_dict(utils.remove_prefix_state_dict(checkpoint['state_dict']), strict=True)
 
     # inference
     model = model.eval()

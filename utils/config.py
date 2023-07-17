@@ -20,7 +20,7 @@ CONFIG.model = EasyDict({})
 CONFIG.model.freeze_seg = True
 CONFIG.model.multi_scale = False
 CONFIG.model.imagenet_pretrain = False
-CONFIG.model.imagenet_pretrain_path = "path/to/model_best_resnet34_En_nomixup.pth"
+CONFIG.model.imagenet_pretrain_path = "/path/to/data/model_best_resnet34_En_nomixup.pth"
 CONFIG.model.batch_size = 16
 # one-hot or class, choice: [3, 1]
 CONFIG.model.mask_channel = 1
@@ -75,22 +75,22 @@ CONFIG.data.random_interp = True
 
 ### Benchmark config
 CONFIG.benchmark = EasyDict({})
-CONFIG.benchmark.him2k_img = 'path/to/HIM2K/images/natural'
-CONFIG.benchmark.him2k_alpha = 'path/to/HIM2K/alphas/natural'
-CONFIG.benchmark.him2k_comp_img = 'path/to/HIM2K/images/comp'
-CONFIG.benchmark.him2k_comp_alpha = 'path/to/HIM2K/alphas/comp'
-CONFIG.benchmark.rwp636_img = 'path/to/RealWorldPortrait-636/image'
-CONFIG.benchmark.rwp636_alpha = 'path/to/RealWorldPortrait-636/alpha'
-CONFIG.benchmark.ppm100_img = 'path/to/PPM-100/image'
-CONFIG.benchmark.ppm100_alpha = 'path/to/PPM-100/matte'
-CONFIG.benchmark.pm10k_img = 'path/to/P3M-10k/validation/P3M-500-NP/original_image'
-CONFIG.benchmark.pm10k_alpha = 'path/to/P3M-10k/validation/P3M-500-NP/mask'
-CONFIG.benchmark.am2k_img = 'path/to/AM2k/validation/original'
-CONFIG.benchmark.am2k_alpha = 'path/to/AM2k/validation/mask'
-CONFIG.benchmark.rw100_img = 'path/to/RefMatte_RW_100/image_all'
-CONFIG.benchmark.rw100_alpha = 'path/to/RefMatte_RW_100/mask'
-CONFIG.benchmark.rw100_text = 'path/to/RefMatte_RW_100/refmatte_rw100_label.json'
-CONFIG.benchmark.rw100_index = 'path/to/RefMatte_RW_100/eval_index_expression.json'
+CONFIG.benchmark.him2k_img = '/path/to/data/HIM2K/images/natural'
+CONFIG.benchmark.him2k_alpha = '/path/to/data/HIM2K/alphas/natural'
+CONFIG.benchmark.him2k_comp_img = '/path/to/data/HIM2K/images/comp'
+CONFIG.benchmark.him2k_comp_alpha = '/path/to/data/HIM2K/alphas/comp'
+CONFIG.benchmark.rwp636_img = '/path/to/data/RealWorldPortrait-636/image'
+CONFIG.benchmark.rwp636_alpha = '/path/to/data/RealWorldPortrait-636/alpha'
+CONFIG.benchmark.ppm100_img = '/path/to/data/PPM-100/image'
+CONFIG.benchmark.ppm100_alpha = '/path/to/data/PPM-100/matte'
+CONFIG.benchmark.pm10k_img = '/path/to/data/P3M-10k/validation/P3M-500-NP/original_image'
+CONFIG.benchmark.pm10k_alpha = '/path/to/data/P3M-10k/validation/P3M-500-NP/mask'
+CONFIG.benchmark.am2k_img = '/path/to/data/AM2k/validation/original'
+CONFIG.benchmark.am2k_alpha = '/path/to/data/AM2k/validation/mask'
+CONFIG.benchmark.rw100_img = '/path/to/data/RefMatte_RW_100/image_all'
+CONFIG.benchmark.rw100_alpha = '/path/to/data/RefMatte_RW_100/mask'
+CONFIG.benchmark.rw100_text = '/path/to/data/RefMatte_RW_100/refmatte_rw100_label.json'
+CONFIG.benchmark.rw100_index = '/path/to/data/RefMatte_RW_100/eval_index_expression.json'
 
 # Training config
 CONFIG.train = EasyDict({})

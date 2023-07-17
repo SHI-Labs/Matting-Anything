@@ -1,0 +1,60 @@
+# Refer to utils/config.py for definition and options.
+
+version = "mam_vitb_8gpu"
+dist = true
+wandb = false
+
+[model]
+trimap_channel = 3
+mask_channel = 1
+batch_size = 10
+freeze_seg = true
+self_refine_width1 = 30
+self_refine_width2 = 15
+    [model.arch]
+    seg = "sam_vit_b"
+    m2m = "sam_decoder_deep"
+
+[train]
+total_step = 20000
+warmup_step = 4000
+val_step = 0
+clip_grad = true
+G_lr = 1e-3
+rec_weight = 1.0
+lap_weight = 1.0
+# Uncomment to resume training
+#resume_checkpoint = "path/to/checkpoint"
+#reset_lr = false
+
+
+[data]
+d646_fg = "path/to/Distinctions-646/Train_ori/FG"
+d646_pha = "path/to/Distinctions-646/Train_ori/GT"
+aim_fg = "path/to/AIM/Combined_Dataset/fg"
+aim_pha = "path/to/AIM/Combined_Dataset/alpha"
+human2k_fg = "path/to/Human2K/Train/FG"
+human2k_pha = "path/to/Human2K/Train/Alpha"
+am2k_fg = "path/to/AM2k/train/fg"
+am2k_pha = "path/to/AM2k/train/mask"
+rim_img = "path/to/RefMatte/train/img_full"
+rim_pha = "path/to/RefMatte/train/mask"
+coco_bg = "path/to/COCO/train2017"
+bg20k_bg = "path/to/Matting/BG20k/full"
+workers = 4
+crop_size = 1024
+cutmask_prob = 0.25
+pha_ratio = 0.5
+augmentation = true
+random_interp = true
+real_world_aug = false
+
+[log]
+tensorboard_path = "./logs/tensorboard"
+tensorboard_step = 100
+tensorboard_image_step = 2000
+logging_path = "./logs/stdout"
+logging_step =  10
+logging_level = "INFO"
+checkpoint_path = "./checkpoints/"
+checkpoint_step = 2000

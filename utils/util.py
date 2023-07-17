@@ -59,7 +59,6 @@ def add_prefix_state_dict(state_dict, prefix="module"):
             new_state_dict[key] = state_dict[key].float()
     return new_state_dict
 
-
 def remove_prefix_state_dict(state_dict, prefix="module"):
     """
     remove prefix from the key of pretrained state dict for Data-Parallel

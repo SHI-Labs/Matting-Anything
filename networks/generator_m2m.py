@@ -12,12 +12,17 @@ sys.path.insert(0, './segment-anything')
 from segment_anything import sam_model_registry
 
 class sam_m2m(nn.Module):
-    def __init__(self, m2m):
+    def __init__(self, seg, m2m):
         super(sam_m2m, self).__init__()
         if m2m not in m2ms.__all__:
             raise NotImplementedError("Unknown M2M {}".format(m2m))
         self.m2m = m2ms.__dict__[m2m](nc=256)
-        self.seg_model = sam_model_registry['vit_b'](checkpoint=None)
+        if seg == 'sam_vit_b':
+            self.seg_model = sam_model_registry['vit_b'](checkpoint='segment-anything/checkpoints/sam_vit_b_01ec64.pth')
+        elif seg == 'sam_vit_l':
+            self.seg_model = sam_model_registry['vit_l'](checkpoint='segment-anything/checkpoints/sam_vit_l_0b3195.pth')
+        elif seg == 'sam_vit_h':
+            self.seg_model = sam_model_registry['vit_h'](checkpoint='segment-anything/checkpoints/sam_vit_h_4b8939.pth')
         self.seg_model.eval()
 
     def forward(self, image, guidance):
@@ -35,6 +40,6 @@ class sam_m2m(nn.Module):
         return feas, pred, post_masks
 
 def get_generator_m2m(seg, m2m):
-    if seg == 'sam':
-        generator = sam_m2m(m2m=m2m)
+    if 'sam' in seg:
+        generator = sam_m2m(seg=seg, m2m=m2m)
     return generator

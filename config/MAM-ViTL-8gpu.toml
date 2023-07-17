@@ -1,6 +1,6 @@
 # Refer to utils/config.py for definition and options.
 
-version = "mam_8gpu"
+version = "mam_vitl_8gpu"
 dist = true
 wandb = false
 
@@ -12,7 +12,7 @@ freeze_seg = true
 self_refine_width1 = 30
 self_refine_width2 = 15
     [model.arch]
-    seg = "sam"
+    seg = "sam_vit_l"
     m2m = "sam_decoder_deep"
 
 [train]
