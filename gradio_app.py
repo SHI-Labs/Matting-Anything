@@ -34,16 +34,16 @@ PALETTE_back = (51, 255, 146)
 
 GROUNDING_DINO_CONFIG_PATH = "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
 GROUNDING_DINO_CHECKPOINT_PATH = "checkpoints/groundingdino_swint_ogc.pth"
-mam_checkpoint="checkpoints/mam_sam_vitb.pth"
+mam_checkpoint="checkpoints/mam_vitb.pth"
 output_dir="outputs"
 device="cuda"
 background_list = os.listdir('assets/backgrounds')
 
 # initialize MAM
-mam_model = networks.get_generator_m2m(seg='sam', m2m='sam_decoder_deep')
+mam_model = networks.get_generator_m2m(seg='sam_vit_b', m2m='sam_decoder_deep')
 mam_model.to(device)
 checkpoint = torch.load(mam_checkpoint, map_location=device)
-mam_model.load_state_dict(utils.remove_prefix_state_dict(checkpoint['state_dict']), strict=True)
+mam_model.m2m.load_state_dict(utils.remove_prefix_state_dict(checkpoint['state_dict']), strict=True)
 mam_model = mam_model.eval()
 
 # initialize GroundingDINO
