@@ -5,13 +5,13 @@ This doc provides the instructions to reproduce the MAM.
 
 - During training, we used foregrounds from AIM, Distinctions-646, AM2K, Human-2K, and RefMatte to ensure a diverse range of instance classes. We used COCO and BG20K to provide a mix of both real-world and synthetic backgrounds.
 
-- During evaluation, we tested MAM on a variety of image matting benchmarks including the semantic image matting benchmarks
+- During the evaluation, we tested MAM on a variety of image matting benchmarks including the semantic image matting benchmarks
 PPM-100, AM2K, PM-10K, the instance image matting benchmark RWP636, HIM2K, and the referring image matting benchmark RefMatte-RW100.
 
 ## Training MAM
 - Please prepare all these datasets and specify the paths of these datasets in the config file.
 
-- Setup the environment and install MAM following the instructions in the [INSTALL.md](INSTALL.md).
+- Set up the environment and install MAM following the instructions in the [INSTALL.md](INSTALL.md).
 
 - Train MAM with SAM ViT-B checkpoint and 8 GPUs
 ```bash
@@ -32,7 +32,7 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py --config config/MA
 
 - Please prepare all these test sets of benchmarks and specify the paths of them in the config file.
 
-- Setup the environment and install MAM following the instructions in the [INSTALL.md](INSTALL.md).
+- Set up the environment and install MAM following the instructions in the [INSTALL.md](INSTALL.md).
 
 - Evaluate MAM based on SAM ViT-B checkpoint on each benchmark
     - PPM-100
