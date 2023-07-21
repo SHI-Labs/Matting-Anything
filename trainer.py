@@ -304,7 +304,7 @@ class Trainer(object):
         torch.save({
             'iter': iter,
             'loss': loss,
-            'state_dict': self.G.state_dict(),
+            'state_dict': self.G.module.m2m.state_dict(),
             'opt_state_dict': self.G_optimizer.state_dict(),
             'lr_state_dict': self.G_scheduler.state_dict()
         }, os.path.join(self.log_config.checkpoint_path, '{}.pth'.format(checkpoint_name)))
