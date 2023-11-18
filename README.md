@@ -37,7 +37,7 @@ In this paper, we propose the Matting Anything Model (MAM), an efficient and ver
 ### Architecture
 
 <div align="center">
-  <img src="assets/archi_arxiv.png" width="100%" height="100%"/>
+  <img src="assets/arxiv_fix.png" width="100%" height="100%"/>
 </div><br/>
 The MAM architecture consists of a pre-trained SAM and an M2M module. Given an
 input image I, SAM generates the mask prediction for the target instance based on the box or point user prompt. The M2M module takes
@@ -52,7 +52,7 @@ information from the multi-scale outputs.
 </div>
 
 <div align="center">
-  <img src="assets/vis.png" width="100%" height="100%"/>
+  <img src="assets/mam_vis_v2.png" width="100%" height="100%"/>
 </div><br/>
 
 We provide visualizations of the alpha matte

@@ -47,7 +47,7 @@ def single_ms_inference(model, image_dict, args):
             post_mask[weight_os8>0] = alpha_pred_os8[weight_os8>0]
             alpha_pred = post_mask.clone().detach()
         else:
-            if args.alphaguide:
+            if args.postprocess:
                 weight_os8 = utils.get_unknown_box_from_mask(post_mask)
                 alpha_pred_os8[weight_os8>0] = post_mask[weight_os8>0]
             alpha_pred = alpha_pred_os8.clone().detach()
@@ -161,7 +161,7 @@ if __name__ == '__main__':
     print('Torch Version: ', torch.__version__)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='config/MAM-8gpu.toml')
+    parser.add_argument('--config', type=str, default='config/MAM-ViTB-8gpu.toml')
     parser.add_argument('--benchmark', type=str, default='him2k', choices=['him2k', 'him2k_comp', 'rwp636', 'ppm100', 'am2k', 'pm10k', 'rw100'])
     parser.add_argument('--checkpoint', type=str, default='checkpoints/mam_sam_vitb.pth',
                         help="path of checkpoint")
@@ -174,7 +174,7 @@ if __name__ == '__main__':
     parser.add_argument('--twoside', action='store_true', default=False, help='post process with twoside of the guidance')        
     parser.add_argument('--sam', action='store_true', default=False, help='return mask')    
     parser.add_argument('--maskguide', action='store_true', default=False, help='mask guidance')    
-    parser.add_argument('--alphaguide', action='store_true', default=False, help='alpha guidance')    
+    parser.add_argument('--postprocess', action='store_true', default=False, help='postprocess to remove bg')    
     parser.add_argument('--prompt', type=str, default='box', choices=['box', 'point', 'text'])
 
     # Parse configuration

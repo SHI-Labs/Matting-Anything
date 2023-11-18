@@ -37,41 +37,41 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py --config config/MA
 - Evaluate MAM based on SAM ViT-B checkpoint on each benchmark
     - PPM-100
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark ppm100 --output outputs/ppm100 --alphaguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark ppm100 --output outputs/ppm100 --postprocess
 
     python evaluation/evaluation_ppm100.py --pred-dir outputs/ppm100
     ```
     - AM2K
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark am2k --output outputs/am2k --alphaguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark am2k --output outputs/am2k --postprocess
 
     python evaluation/evaluation_am2k.py --pred-dir outputs/am2k
     ```
     - PM-10K
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark pm10k --output outputs/pm10k --alphaguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark pm10k --output outputs/pm10k --postprocess
 
     python evaluation/evaluation_pm10k.py --pred-dir outputs/pm10k
     ```
     - RWP636
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark rwp636 --output outputs/rwp636 --alphaguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark rwp636 --output outputs/rwp636 --postprocess
 
     python evaluation/IMQ_quick_rwp.py path/to/outputs/rwp636 path/to/RealWorldPortrait-636/alpha
     ```
     - HIM2K
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark him2k --output outputs/him2k/ --maskguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark him2k --output outputs/him2k/ --maskguide
 
     python evaluation/IMQ.py path/to/outputs/him2k path/to/HIM2K/alphas/natural/
 
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark him2k_comp --output outputs/him2k_comp --maskguide
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark him2k_comp --output outputs/him2k_comp --maskguide
 
     python evaluation/IMQ.py path/to/outputs/him2k_comp path/to/HIM2K/alphas/comp/
     ```
     - RefMatte-RW100
     ```bash
-    python inference_mam.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark rw100 --output outputs/rw100 --maskguide --prompt text/box/point
+    python inference_benchmark.py --config config/MAM-ViTB-8gpu.toml --checkpoint checkpoints/mam_vitb.pth --benchmark rw100 --output outputs/rw100 --maskguide --prompt text/box/point
 
     python evaluation/evaluation_refmatte.py --pred-dir outputs/rw100
     ```
